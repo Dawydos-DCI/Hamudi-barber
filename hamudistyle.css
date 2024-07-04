@@ -1,0 +1,109 @@
+/* hamudistyle.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Source Code Pro', monospace;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    font-size: 1.5em;
+    color: white;
+}
+
+#hero {
+    height: 100vh;
+    background: url('images/hamudistartdl.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.hero-text {
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#preisliste, #termin {
+    min-height: 60vh;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideInSection 1s ease-in-out forwards;
+}
+
+@keyframes slideInSection {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .nav-left {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
